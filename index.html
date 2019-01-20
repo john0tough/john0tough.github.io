@@ -1,8 +1,252 @@
----
-layout: default
-title: Hank Quinlan, Horrible Cop
----
-<div class="blurb">
-	<h1>Hi there, I'm Hank Quinlan!</h1>
-	<p>I'm best known as the horrible cop from <em>A Touch of Evil</em> Don't trust me. <a href="/about">Read more about my life...</a></p>
-</div><!-- /.blurb -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="theme-color" content="#000000" />
+	<!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+	<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+	<!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<title>React App</title>
+
+	<script>
+		function toogleMenu() {
+			if (this.classList.contains("st-1")) {
+				this.classList.toggle("st-2");
+				setTimeout(() => this.classList.toggle("st-1"), 500);
+			} else {
+				this.classList.toggle("st-1");
+				setTimeout(() => this.classList.toggle("st-2"), 500);
+			}
+
+			document
+				.querySelector("div.navbar-collapse")
+				.classList.toggle("show-collapse");
+		}
+		document.onreadystatechange = () => {
+			if (document.readyState === "complete") {
+				const menuButton = document.querySelector(
+					'button[class="navbar-toggler"]'
+				);
+				menuButton.addEventListener("click", toogleMenu, false);
+
+				const blogCards = document.querySelectorAll(
+					'.blog .card'
+				);
+
+				blogCards.forEach((el) => {
+					el.addEventListener('mouseenter', (event) => {
+						blogCards.forEach((el) => {
+							if (!el.classList.contains('fade')) {
+								el.classList.add('fade');
+							}
+						});
+					});
+					el.addEventListener('mouseleave', (event) => {
+						blogCards.forEach((el) => {
+							if (el.classList.contains('fade')) {
+								el.classList.remove('fade');
+							}
+						});
+					})
+				});
+
+			}
+		};
+	</script>
+</head>
+
+<body onrea>
+	<nav class="navbar navbar-expand-md navbar-fixed-top navbar-light bg-light pt-3 pb-3">
+		<span class="navbar-brand mb-0 h1">Gio SoftDev</span>
+		<button onclick="" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+		 aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+			<div class="burguer"><span></span><span></span><span></span></div>
+		</button>
+		<div class="container">
+			<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+				<ul class="nav navbar-nav mx-auto">
+					<li class="nav-item"><a class="nav-link" href="#">Acerca de</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Experiencia</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Proyectos</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Articulos</a></li>
+				</ul>
+				<ul class="nav navbar-nav">
+					<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div id="home-profile" class="position-relative overflow-hidden p-3 pt-md-6 pb-md-6 text-center bg-dark text-white">
+		<div class="col-md-8 p-lg-5 mx-auto my-5 py-md-5">
+			<h1 class="display-4 font-weight-normal py-lg-5 me active">Hola Soy Giovanni</h1>
+			<p class="my-title">Y soy desarrollador de aplicaciones web</p>
+
+			<a class="btn btn-outline-secondary about-me" href="#">Sobre mi</a>
+		</div>
+		<div class="product-device shadow-sm d-none d-md-block"></div>
+		<div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+	</div>
+
+	<main id="home">
+		<div class="col-md-10 p-5 my-3 mx-auto about">
+			<p class="lead font-weight-normal py-md-5">
+				And an even wittier subheading to boot. Jumpstart your marketing
+				efforts with this example based on Apple’s marketing pages.
+			</p>
+		</div>
+		<div>
+			<div class="container py-5">
+				<div class="row">
+					<div class="col">
+						<h2 class="text-center">Experiencia</h2>
+					</div>
+				</div>
+			</div>
+
+			<div class="d-flex justify-content-center flex-row  flex-wrap experience pb-3">
+				<div class="card-container">
+					<div class="card"></div>
+					<div class="text-center">
+						Titulo
+					</div>
+					<a href="#" class="btn btn-outline-primary ">vinculo</a>
+				</div>
+				<div class="card-container">
+					<div class="card"></div>
+					<div class="text-center">
+						Titulo
+					</div>
+					<a href="#" class="btn btn-outline-primary ">vinculo</a>
+				</div>
+				<div class="card-container">
+					<div class="card"></div>
+					<div class="text-center">
+						Titulo
+					</div>
+					<a href="#" class="btn btn-outline-primary ">vinculo</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="bg-dark  py-5 mb-3 services">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<h2 class="text-center">Servicios</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container blog py-5">
+			<div class="row">
+				<div class="col-sm-12">
+					<h2 class="text-center">Articulos</h2>
+					<p>
+						And an even wittier subheading to boot. Jumpstart your marketing
+					</p>
+				</div>
+				<div class="col-sm-6 col-lg-3">
+					<div class="card mb-3 border-0">
+						<img src="http://qnimate.com/wp-content/uploads/2014/03/images2.jpg" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">Special title treatment</h5>
+							<div class="date">2019-01-01</div>
+							<hr class="ml-0" />
+							<p class="card-text">
+								With supporting text below as a natural lead-in to additional
+								content.
+							</p>
+							<a href="#" class="btn btn-primary">Go somewhere</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-lg-3">
+					<div class="card mb-3 border-0">
+						<img src="http://qnimate.com/wp-content/uploads/2014/03/images2.jpg" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">Special title treatment</h5>
+							<div class="date">2019-01-01</div>
+							<hr class="ml-0" />
+							<p class="card-text">
+								With supporting text below as a natural lead-in to additional
+								content.
+							</p>
+							<a href="#" class="btn btn-primary">Go somewhere</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-lg-3">
+					<div class="card mb-3 border-0">
+						<img src="http://qnimate.com/wp-content/uploads/2014/03/images2.jpg" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">Special title treatment</h5>
+							<div class="date">2019-01-01</div>
+							<hr class="ml-0" />
+							<p class="card-text">
+								With supporting text below as a natural lead-in to additional
+								content.
+							</p>
+							<a href="#" class="btn btn-primary">Go somewhere</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-lg-3">
+					<div class="card mb-3 border-0">
+						<img src="http://qnimate.com/wp-content/uploads/2014/03/images2.jpg" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">Special title treatment</h5>
+							<div class="date">2019-01-01</div>
+							<hr class="ml-0" />
+							<p class="card-text">
+								With supporting text below as a natural lead-in to additional
+								content.
+							</p>
+							<a href="#" class="btn btn-primary">Go somewhere</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer class="bg-dark text-white footer">
+		<div class="container py-5 ">
+			<div class="row">
+				<div class="col-xs-8 col-md-5">
+					<h3>Timmy O'Mahony</h3>
+					<p><a class="email" href="mailto:hey@timmyomahony.com">hey@timmyomahony.com</a></p>
+					<p>I’m an Irish software developer. I can help you build
+						and grow your next product.</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<div id="root"></div>
+	<!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+</body>
+
+</html>
