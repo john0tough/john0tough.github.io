@@ -1,4 +1,3 @@
-$break-default: 767px;
 .navbar {
   
   .navbar-toggler {
@@ -48,7 +47,7 @@ $break-default: 767px;
     }
   }
   .navbar-collapse {
-    @media screen and (max-width: $break-default) {
+    @media screen and (max-width: $break-md) {
       position: absolute;
       display: block !important;
 
@@ -70,7 +69,7 @@ $break-default: 767px;
     }
   }
   .show-collapse {
-    @media screen and (max-width: $break-default) {
+    @media screen and (max-width: $break-md) {
       transform: translate3d(0, 672px, 0);
     }
   }

@@ -3,8 +3,16 @@
 # only Main files contain this front matter, not partials.
 ---
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
 $color: #425ff4;
+$break-md: 767.98px;
+$break-sm: 575.98px;
+
 @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css");
 @import "utilities";
 @import "menu";
 @import "home";
+body {
+    font-family: 'Open Sans', sans-serif!important;
+}

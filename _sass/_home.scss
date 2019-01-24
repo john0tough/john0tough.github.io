@@ -1,17 +1,42 @@
 @include keyframes(hmOpacity){
     0% {
-        opacity: 0;
-      }
-      100% {
+        opacity: 0;   
+        transform: translate(-600px, 0px);
+    }
+    100% {
         opacity: 1;
+        transform: translate(0px, 0px);
     } 
+}
+.navbar.navbar-fixed-top {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    background-color: transparent!important;
 }
 .active {
     opacity: 0;
+    transform: translate(50px, 0px);
 }
 #home-profile{
-    .me{
-        @include animateOnce(hmOpacity, ease-in, 0.5s, 0.5s);
+    background-image: url('../images/digital-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 500px;
+    .me{        
+        @include animateOnce(hmOpacity, ease-in, 0.5s, 0s);
+        font-size: 3.3rem;
+        font-weight: 600;
+        @media screen and (max-width: $break-md) {
+            font-size: 2.5rem;
+        }
+    }
+    .my-title{
+        font-size: 1.7rem;
+        @media screen and (max-width: $break-md) {
+            font-size: 2.5rem;
+        }
     }
 }
 main{
