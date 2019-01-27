@@ -1,12 +1,19 @@
-$colorOverDark: #efefef;
-$colorEmphasis: #0073b1;
-$colorOverLight: rgba(0,0,0,.9);
 .navbar.navbar-fixed-top {
     position: absolute;
     width: 100%;
     z-index: 1;
     background-color: transparent!important;
-    
+    .navbar-brand a{
+        color: white;
+        border: 2px solid white;
+        padding: 5px;
+        border-radius: 5%;
+        @include transition(color 0.3S, border 0.3s);
+    }
+    .navbar-brand a:hover{
+        text-decoration: none;
+        border: 2px solid $colorEmphasis;
+    }
     li{
         a{
             font-weight: 100;
@@ -92,6 +99,9 @@ main{
                 height: 240px;
                 max-width: 100%;
                 width: calc(60vw - 10px);
+                background-repeat: no-repeat;
+                background-position: center; 
+                background-size: contain;
                 cursor: pointer;
                 @include transition(opacity 0.5s);
                 @include landscapeMobile{

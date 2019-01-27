@@ -3,11 +3,8 @@
 # only Main files contain this front matter, not partials.
 ---
 
-$color: #425ff4;
-$break-md: 767.98px;
-$break-sm: 575.98px;
-
 @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css");
 @import "utilities";
+@import "default";
 @import "menu";
 @import "home";

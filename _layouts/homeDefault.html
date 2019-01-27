@@ -3,96 +3,16 @@
 
 <head>
 	<meta charset="utf-8" />
-	<link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+	<link rel="shortcut icon" href="favicon.ico" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-	<meta name="theme-color" content="#000000" />
-	<!--
-      manifest.json provides metadata used when your web app is added to the
-      homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-	<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-	<!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
+	<link rel="manifest" href="/manifest.json" />
 	<link rel="stylesheet" href="/assets/css/main.css" />
 	<title>{{ page.title }}</title>
-
-	<script>
-		function toogleMenu() {
-			if (this.classList.contains("st-1")) {
-				this.classList.toggle("st-2");
-				setTimeout(() => this.classList.toggle("st-1"), 500);
-			} else {
-				this.classList.toggle("st-1");
-				setTimeout(() => this.classList.toggle("st-2"), 500);
-			}
-
-			document
-				.querySelector("div.navbar-collapse")
-				.classList.toggle("show-collapse");
-		}
-		document.onreadystatechange = () => {
-			if (document.readyState === "complete") {
-				const menuButton = document.querySelector(
-					'button[class="navbar-toggler"]'
-				);
-				menuButton.addEventListener("click", toogleMenu, false);
-
-				const blogCards = document.querySelectorAll(
-					'.blog .card'
-				);
-
-				blogCards.forEach((el) => {
-					el.addEventListener('mouseenter', (event) => {
-						blogCards.forEach((el) => {
-							if (!el.classList.contains('fade')) {
-								el.classList.add('fade');
-							}
-						});
-					});
-					el.addEventListener('mouseleave', (event) => {
-						blogCards.forEach((el) => {
-							if (el.classList.contains('fade')) {
-								el.classList.remove('fade');
-							}
-						});
-					})
-				});
-
-			}
-		};
-	</script>
 </head>
 
-<body onrea>
-	<nav class="navbar navbar-expand-md navbar-fixed-top navbar-light bg-light pt-3 pb-3">
-		<span class="navbar-brand mb-0 h1">Gio SoftDev</span>
-		<button onclick="" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
-		 aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-			<div class="burguer"><span></span><span></span><span></span></div>
-		</button>
-		<div class="container">
-			<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-				<ul class="nav navbar-nav mx-auto">
-					<li class="nav-item  pb-3"><a class="nav-link" href="#">Acerca de</a></li>
-					<li class="nav-item  pb-3"><a class="nav-link" href="#">Experiencia</a></li>
-					<li class="nav-item  pb-3"><a class="nav-link" href="#">Proyectos</a></li>
-					<li class="nav-item  pb-3"><a class="nav-link" href="#">Contacto</a></li>
-					<li class="nav-item  pb-3"><a class="nav-link" href="#">Articulos</a></li>
-				</ul>
-				<ul class="nav navbar-nav">
-					<li class="nav-item  pb-2"><a class="nav-link" href="#">Contact</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<div id="home-profile"  class="position-relative overflow-hidden d-flex text-center bg-dark text-white">
+<body>
+	{% include menu.html classes="navbar-fixed-top" %}
+	<div id="home-profile" class="position-relative overflow-hidden d-flex text-center bg-dark text-white">
 		<div class="col-md-7 p-lg-5 mx-auto my-auto">
 			<h1 class="pt-lg-5 me active">Hola me llamo Giovanni.</h1>
 			<p class="my-title">Soy Desarrollador de Aplicaciones y Sitios Web</p>
@@ -119,9 +39,9 @@
 				</div>
 			</div>
 			<div class="d-flex justify-content-center flex-row  flex-wrap experience pb-5">
-				{% for experience in site.experiences %}
+				{% for experience in site.work_experience %}
 				<div class="card-container">
-					<div class="card" style="background: url('{{experience.img}}') center center/cover;"></div>
+					<div class="card" style="background-image: url('{{experience.img}}')"></div>
 					<div class="text-center">
 						{{experience.title}}
 					</div>
@@ -157,7 +77,7 @@
 							<div class="date">{{post.date}}</div>
 							<hr class="ml-0" />
 							<p class="card-text">
-									{{post.summary}}
+								{{post.summary}}
 							</p>
 							<a href="{{post.url}}" class="btn btn-outline-primary">Go somewhere</a>
 						</div>
@@ -167,29 +87,53 @@
 			</div>
 		</div>
 	</main>
-	<footer class="bg-dark text-white footer">
-		<div class="container py-5 ">
-			<div class="row">
-				<div class="col-xs-8 col-md-5">
-					<h3>Timmy O'Mahony</h3>
-					<p><a class="email" href="mailto:hey@timmyomahony.com">hey@timmyomahony.com</a></p>
-					<p>I’m an Irish software developer. I can help you build
-						and grow your next product.</p>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<div id="root"></div>
-	<!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+	{% include footer.html %}
 </body>
+
+<script>
+	function toogleMenu() {
+		if (this.classList.contains("st-1")) {
+			this.classList.toggle("st-2");
+			setTimeout(() => this.classList.toggle("st-1"), 500);
+		} else {
+			this.classList.toggle("st-1");
+			setTimeout(() => this.classList.toggle("st-2"), 500);
+		}
+
+		document
+			.querySelector("div.navbar-collapse")
+			.classList.toggle("show-collapse");
+	}
+	document.onreadystatechange = () => {
+		if (document.readyState === "complete") {
+			const menuButton = document.querySelector(
+				'button[class="navbar-toggler"]'
+			);
+			menuButton.addEventListener("click", toogleMenu, false);
+
+			const blogCards = document.querySelectorAll(
+				'.blog .card'
+			);
+
+			blogCards.forEach((el) => {
+				el.addEventListener('mouseenter', (event) => {
+					blogCards.forEach((el) => {
+						if (!el.classList.contains('fade')) {
+							el.classList.add('fade');
+						}
+					});
+				});
+				el.addEventListener('mouseleave', (event) => {
+					blogCards.forEach((el) => {
+						if (el.classList.contains('fade')) {
+							el.classList.remove('fade');
+						}
+					});
+				})
+			});
+
+		}
+	};
+</script>
 
 </html>
