@@ -19,12 +19,16 @@
             font-weight: 100;
             text-transform: uppercase;
             color: $colorOverDark!important;
+            @include transition(font-weight 0.3s);
         }
-        border-bottom: 2px solid transparent;
-        @include transition(border-bottom-color 0.3S);
+        border-top: 2px solid transparent;
+        @include transition(border-top-color 0.3S);
     }
     li:hover{
-        border-bottom-color: $colorEmphasis;
+        a{
+            font-weight: 400;
+        }
+        border-top-color: $colorEmphasis;
     }
 }
 .active {

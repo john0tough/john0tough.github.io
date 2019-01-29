@@ -3,11 +3,23 @@ layout: container
 title: Experiencia Laboral
 image-title: "/assets/images/work-experience.png"
 ---
-<h1>{{ page.title }}</h1>
-<ul>
+<p>Actualmente cuento con 8 años de experiencia en diseño, desarrollo y mantenimiento de sitios y aplicaciones Web. A
+    continuacion el listado de las diferentes compañias a las que he prestado mis servicios:</p>
 
-    {% for work_experience in site.work_experience %}
-    <li> <a href="{{ work_experience.url }}" title="{{ experience.title }}">{{ work_experience.description
-            }}</a></li>
-    {% endfor %}
-</ul>
+<div class="card border-0 mb-3 work-experience">
+    <div class="card-header bg-transparent d-flex justify-content-between flex-column flex-sm-row align-items-sm-center">
+        <div>
+            <img src="/assets/images/pricetravel-logo.png" class="img-fluid" style="height: 50px;" />
+            <span class="p-3 align-middle title" >PriceTravel</span>
+        </div>
+        <span class="pt-2 role">Front
+            End Developer</span>
+    </div>
+    <div class="card-body">
+        <p class="card-text  pt-4 pt-md-0">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-outline-primary">Go somewhere</a>
+    </div>
+    <div class="card-footer border-top-0">
+        Dic 2017 - Actual
+    </div>
+</div>
