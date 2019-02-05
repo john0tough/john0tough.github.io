@@ -98,3 +98,17 @@ header{
         }
     }
 }
+
+.card{
+    .card-body{
+        max-width: 60%;
+    }
+    .card-img-right{
+        position: absolute;
+        height: auto;
+        max-height: 100%;
+        width: auto;
+        right: 0;
+        max-width: 40%;
+    }
+}

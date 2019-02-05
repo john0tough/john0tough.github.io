@@ -3,11 +3,26 @@ layout: blog-container
 title: Blog
 menu-theme: "light-theme"
 ---
-<p>From to the world, with Love </p>
-	<h1>{{ page.title }}</h1>
-	<ul class="posts">
+<div class="d-flex">
+	<div class="mx-auto posts">
 
-	  {% for post in site.posts %}
-	    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-	  {% endfor %}
-	</ul>
+		{% for post in site.posts %}
+
+			<div class="card pb-2">
+				
+				<div class="card-body">
+					<h5 class="card-title"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h5>
+					<h6 class="card-subtitle mb-2 text-muted">{{ post.date | date_to_string }}</h6>
+					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+							content. Some quick example text to build on the card title and make up the bulk of the card's
+							content. Some quick example text to build on the card title and make up the bulk of the card's
+							content. Some quick example text to build on the card title and make up the bulk of the card's
+							content.</p>
+					<a href="#" class="card-link">READ MORE</a>
+				</div>
+				<img class="card-img-right" src="/assets/images/projects.jpg" alt=""/>
+			</div>
+
+		{% endfor %}
+		</div>
+</div>
