@@ -1,0 +1,20 @@
+{
+  "name": "john0tough.github.io",
+  "version": "1.0.0",
+  "description": "Gio's Personal Website ",
+  "main": "index.js",
+  "scripts": {
+    "start": "bundler exec jekyll serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/john0tough/john0tough.github.io.git"
+  },
+  "author": "Gio Garcia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/john0tough/john0tough.github.io/issues"
+  },
+  "homepage": "https://github.com/john0tough/john0tough.github.io#readme"
+}

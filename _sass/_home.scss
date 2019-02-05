@@ -4,11 +4,8 @@
     z-index: 1;
     background-color: transparent!important;
     .navbar-brand a{
-        color: white;
-        border: 2px solid white;
-        padding: 5px;
-        border-radius: 5%;
-        @include transition(color 0.3S, border 0.3s);
+        color: #fff;
+        border-color: #fff;
     }
     .navbar-brand a:hover{
         text-decoration: none;
@@ -40,7 +37,6 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    min-height: 500px;
     .me{        
         @include animateOnce((hmOpacity, hmTranslate), ease-in, 0.5s, 0s);
         font-size: 3.3rem;
@@ -55,7 +51,7 @@
         font-weight: 300;
         font-size: 1.7rem;
         @media screen and (max-width: $break-md) {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
         }
     }
 }

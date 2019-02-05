@@ -11,17 +11,17 @@
 </head>
 
 <body>
-	{% include menu.html classes="navbar-fixed-top" %}
-	<div id="home-profile" class="position-relative overflow-hidden d-flex text-center bg-dark text-white">
+	{% include menu.html %}
+	<header id="home-profile" class="position-relative overflow-hidden d-flex text-center bg-dark text-white">
 		<div class="col-md-7 p-lg-5 mx-auto my-auto">
-			<h1 class="pt-lg-5 me active">Hola me llamo Giovanni.</h1>
+			<h1 class="pt-5 me active">Hola me llamo Giovanni.</h1>
 			<p class="my-title">Soy Desarrollador de Aplicaciones y Sitios Web</p>
 
 			<a class="btn btn-outline-secondary about-me" href="#">Sobre mi</a>
 		</div>
 		<div class="product-device shadow-sm d-none d-md-block"></div>
 		<div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-	</div>
+	</header>
 
 	<main id="home">
 		<div class="col-md-10 p-5 my-3 mx-auto about">
@@ -89,51 +89,5 @@
 	</main>
 	{% include footer.html %}
 </body>
-
-<script>
-	function toogleMenu() {
-		if (this.classList.contains("st-1")) {
-			this.classList.toggle("st-2");
-			setTimeout(() => this.classList.toggle("st-1"), 500);
-		} else {
-			this.classList.toggle("st-1");
-			setTimeout(() => this.classList.toggle("st-2"), 500);
-		}
-
-		document
-			.querySelector("div.navbar-collapse")
-			.classList.toggle("show-collapse");
-	}
-	document.onreadystatechange = () => {
-		if (document.readyState === "complete") {
-			const menuButton = document.querySelector(
-				'button[class="navbar-toggler"]'
-			);
-			menuButton.addEventListener("click", toogleMenu, false);
-
-			const blogCards = document.querySelectorAll(
-				'.blog .card'
-			);
-
-			blogCards.forEach((el) => {
-				el.addEventListener('mouseenter', (event) => {
-					blogCards.forEach((el) => {
-						if (!el.classList.contains('fade')) {
-							el.classList.add('fade');
-						}
-					});
-				});
-				el.addEventListener('mouseleave', (event) => {
-					blogCards.forEach((el) => {
-						if (el.classList.contains('fade')) {
-							el.classList.remove('fade');
-						}
-					});
-				})
-			});
-
-		}
-	};
-</script>
-
+<script src="/assets/scripts/index.js"></script>
 </html>

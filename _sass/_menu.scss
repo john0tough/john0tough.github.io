@@ -1,4 +1,22 @@
-.navbar {
+.navbar.light-theme{
+  .navbar-nav {
+    .nav-link{
+      color: #565558!important;
+    }
+  }
+  .navbar-brand {
+    a{
+      color: $colorEmphasis!important;
+      border: 2px solid $colorEmphasis!important;  
+    }
+    a:hover{
+      color: #fff!important;
+      border: inherit;  
+    }
+    
+  }
+}
+.navbar {  
   background-color: #fff!important;
   .navbar-toggler {
     outline: none !important;
