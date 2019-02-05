@@ -99,16 +99,26 @@ header{
     }
 }
 
-.card{
-    .card-body{
-        max-width: 60%;
-    }
-    .card-img-right{
-        position: absolute;
-        height: auto;
-        max-height: 100%;
-        width: auto;
-        right: 0;
-        max-width: 40%;
-    }
+.posts{
+    max-width: 700px;
+    .card{
+        max-height: 300px; 
+        overflow: hidden;
+        .card-body{
+            width: 60%;
+            .text-container{
+                height: 125px;
+                overflow: hidden;
+                @media screen and (min-width: $break-md) {
+                    height: 150px;
+                }       
+            }
+        }
+        .card-img-right{
+            width: 45%;
+            img{
+                width: 100%;
+            }
+        }
+    }    
 }
