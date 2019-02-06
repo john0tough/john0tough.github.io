@@ -1,7 +1,7 @@
 .navbar.light-theme{
   .navbar-nav {
     .nav-link{
-      color: #565558!important;
+      color: $colorOverLight!important;
     }
   }
   .navbar-brand {
@@ -12,12 +12,67 @@
     a:hover{
       color: #fff!important;
       border: inherit;  
+    }    
+  }
+  li{
+    a{
+        color: $colorOverLight!important;  
     }
-    
+  }
+  .navbar-toggler {
+    .burguer {
+      span {        
+        background-color: $colorOverLight!important;
+      }
+    }
   }
 }
-.navbar {  
-  background-color: #fff!important;
+
+.navbar.navbar-fixed-top {  
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  background-color: transparent!important;
+  .navbar-brand a{
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 5px;
+    font-weight: 300;
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    display: inline-block;
+    line-height: 32px;
+    font-size: 18px;
+    @include transition(border 0.3s, background-color 0.3s, color 0.3s, transform 0.3s);
+  }
+  .navbar-brand a:hover{
+      text-decoration: none;
+      border: 2px solid $colorEmphasis;
+      background-color: $bg-color;
+      color: #fff;
+      transform: rotate3d(-1, 3, 0, 360deg);
+  }
+  li{
+      a{
+          font-weight: 100;
+          text-transform: uppercase;
+          color: $colorOverDark!important;
+          @include transition(font-weight 0.3s);
+          @media screen and (max-width: $break-md) {
+            color: $colorOverLight!important;
+          }
+      }
+      border-top: 2px solid transparent;
+      @include transition(border-top-color 0.3S);
+  }
+  li:hover{
+    a{
+      font-weight: 400;
+    }
+    border-top-color: $colorEmphasis;
+  }
+
   .navbar-toggler {
     outline: none !important;
     box-shadow: none;
@@ -28,7 +83,7 @@
         width: 25px;
         height: 2px;
         display: block;
-        background-color: gray;
+        background-color: #fff;
         margin: 5px;
         @include transition(
           margin 0.5s,
@@ -66,14 +121,14 @@
   }
   .container{    
     @media screen and (max-width: $break-md) {
-      max-width: 560px;
+      max-width: 598px;
     }
     .navbar-collapse {
       @media screen and (max-width: $break-md) {
         position: absolute;
         display: block !important;
-        
-        top: -600px;
+        color: #fff;
+        top: -610px;
         left: 0px;
         right: 0px;
         z-index: 9999;

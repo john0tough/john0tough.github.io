@@ -11,6 +11,7 @@ function toogleMenu() {
         .querySelector("div.navbar-collapse")
         .classList.toggle("show-collapse");
 }
+
 function delayClick(ev){
     ev.preventDefault();
     setTimeout(()=>{
