@@ -100,25 +100,55 @@ header{
 }
 
 .posts{
-    max-width: 700px;
-    .card{
-        max-height: 300px; 
-        overflow: hidden;
-        .card-body{
-            width: 60%;
-            .text-container{
-                height: 125px;
-                overflow: hidden;
-                @media screen and (min-width: $break-md) {
-                    height: 150px;
-                }       
-            }
+
+    max-width: 345.6px;    
+    .card{        
+        .text-container{
+            height: 150px;      
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .text-container:after{
+            position: absolute;
+            bottom: 0;  
+            height: 100%;
+            width: 100%;
+            content: "";
+            background: linear-gradient(to top,
+                rgba(255,255,255, 1) 4%, 
+                rgba(255,255,255, 0) 35%
+            );
+            pointer-events: none;
         }
         .card-img-right{
-            width: 45%;
+            width: 100%;
             img{
                 width: 100%;
             }
-        }
+        } 
     }    
+    @media screen and (min-width: $break-sm) {
+        max-width: 700px; 
+        .card{
+            max-height: 300px; 
+            overflow: hidden;
+            .card-body{
+                width: 60%;
+                .text-container{
+                    height: 125px;
+                    overflow: hidden;
+                    @media screen and (min-width: $break-md) {
+                        height: 150px;
+                    }       
+                }
+            }
+            .card-img-right{
+                width: 45%;
+                img{
+                    width: 100%;
+                }
+            }    
+        }
+    } 
 }
