@@ -6,20 +6,22 @@ image-title: "/assets/images/work-experience.png"
 <p>Actualmente cuento con 8 años de experiencia en diseño, desarrollo y mantenimiento de sitios y aplicaciones Web. A
     continuacion el listado de las diferentes compañias a las que he prestado mis servicios:</p>
 
-<div class="card border-0 mb-3 work-experience">
+{% assign ordered_experience = site.work_experience | sort:"order" | reverse %}
+{% for experience in ordered_experience %}
+<div class="card border-0 mb-3 work-experience  mt-5">
     <div class="card-header bg-transparent d-flex justify-content-between flex-column flex-sm-row align-items-sm-center">
         <div>
-            <img src="/assets/images/pricetravel-logo.png" class="img-fluid" style="height: 50px;" />
-            <span class="p-3 align-middle title" >PriceTravel</span>
+            <img src="{{experience.image-preview}}" alt ="{{experience.title}}" class="img-fluid" style="height: 50px;" />
+            <span class="p-3 align-middle title" >{{experience.title}}</span>
         </div>
-        <span class="pt-2 role">Front
-            End Developer</span>
+        <span class="pt-2 role">{{experience.position}}</span>
     </div>
     <div class="card-body">
-        <p class="card-text  pt-4 pt-md-0">With supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text  pt-4 pt-md-0">{{experience.intro}}</p>
         <a href="#" class="btn btn-outline-primary">Go somewhere</a>
     </div>
     <div class="card-footer border-top-0">
-        Dic 2017 - Actual
+        {{experience.period}}  
     </div>
 </div>
+{% endfor %}

@@ -1,32 +1,21 @@
 ---
 layout: blog-container
 title: Blog
-menu-theme: "light-theme"
 ---
 <div class="d-flex">
 	<div class="mx-auto posts">
-
 		{% for post in site.posts %}
-		<div class="card mb-3 d-flex flex-sm-row flex-column-reverse">
-				
+		<div class="card mb-3 d-flex flex-sm-row flex-column-reverse">				
 			<div class="card-body">
 				<h5 class="card-title"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h5>
 				<h6 class="card-subtitle mb-2 text-muted">{{ post.date | date_to_string }}</h6>
 				<div class="text-container mb-2">
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-								content. Some quick example text to build on the card title and make up the bulk of the card's
-								content. Some quick example text to build on the card title and make up the bulk of the card's
-								content. Some quick example text to build on the card title and make up the bulk of the card's
-								content.</p>
+						<p class="card-text">{{ post.summary}}</p>
 				</div>
-				<a href="#" class="card-link">READ MORE</a>
+				<a href="{{ post.url }}" class="btn btn-outline-primary">READ MORE</a>
 			</div>
-			<div class="card-img-right"><img  src="/assets/images/projects.jpg" alt=""/></div>
+			<div class="card-img-right"><img alt="{{ post.title }}" src="{{ post.image-preview }}" /></div>
 		</div>
-			
-			
-			
-
 		{% endfor %}
-		</div>
+	</div>
 </div>

@@ -70,6 +70,12 @@ header{
 .posts{
     max-width: 345.6px;    
     .card{        
+        .card-title{            
+            a {
+                color: $colorOverLight;
+                @include transition(color 0.3s);
+            }
+        }
         .text-container{
             height: 150px;      
             overflow: hidden;
@@ -95,6 +101,14 @@ header{
             }
         } 
     }    
+    .card:hover{
+        .card-title{            
+            a {
+                color: $colorEmphasis;
+                text-decoration: none;
+            }
+        }
+    } 
     @media screen and (min-width: $break-sm) {
         max-width: 700px; 
         .card{
@@ -106,7 +120,7 @@ header{
                     height: 125px;
                     overflow: hidden;
                     @media screen and (min-width: $break-md) {
-                        height: 150px;
+                        height: 138px;
                     }       
                 }
             }

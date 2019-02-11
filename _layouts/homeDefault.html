@@ -39,9 +39,10 @@
 				</div>
 			</div>
 			<div class="d-flex justify-content-center flex-row  flex-wrap experience pb-5">
-				{% for experience in site.work_experience %}
+				{% assign ordered_experience = site.work_experience | sort:"order" | reverse  %}
+				{% for experience in ordered_experience %}
 				<div class="card-container">
-					<div class="card" style="background-image: url('{{experience.img}}')"></div>
+					<div class="card" style="background-image: url('{{experience.image-title}}')"></div>
 					<div class="text-center">
 						{{experience.title}}
 					</div>
@@ -71,7 +72,7 @@
 				{% for post in site.posts %}
 				<div class="col-sm-6 col-lg-3">
 					<div class="card mb-3 border-0">
-						<img src="{{post.top-image}}" class="card-img-top" alt="...">
+						<img src="{{post.image-preview}}" class="card-img-top" alt="...">
 						<div class="card-body">
 							<h5 class="card-title">{{post.title}}</h5>
 							<div class="date">{{post.date}}</div>

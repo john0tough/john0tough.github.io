@@ -2,7 +2,8 @@
 layout: post
 title: "Hank Quinlan, Horrible Cop, Launches Site"
 date: 2014-04-30
-top-image: "http://qnimate.com/wp-content/uploads/2014/03/images2.jpg"
+image-preview: "http://qnimate.com/wp-content/uploads/2014/03/images2.jpg"
+image-title: "http://qnimate.com/wp-content/uploads/2014/03/images2.jpg"
 summary: "descripcion del articulo a describir"
 ---
 

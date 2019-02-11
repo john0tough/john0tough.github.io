@@ -33,6 +33,13 @@
   width: 100%;
   z-index: 1;
   background-color: transparent!important;
+  li{
+    a{
+        color: $colorOverDark!important;        
+        text-transform: uppercase;        
+        font-weight: 100;
+    }
+  }
   .navbar-brand a{
     color: #fff;
     border: 2px solid #fff;
@@ -53,26 +60,6 @@
       color: #fff;
       transform: rotate3d(-1, 0, 1,360deg) rotateZ(45deg);
   }
-  li{
-      a{
-          font-weight: 100;
-          text-transform: uppercase;
-          color: $colorOverDark!important;
-          @include transition(font-weight 0.3s);
-          @media screen and (max-width: $break-md) {
-            color: $colorOverLight!important;
-          }
-      }
-      border-top: 2px solid transparent;
-      @include transition(border-top-color 0.3S);
-  }
-  li:hover{
-    a{
-      font-weight: 400;
-    }
-    border-top-color: $colorEmphasis;
-  }
-
   .navbar-toggler {
     outline: none !important;
     box-shadow: none;
@@ -80,8 +67,8 @@
     .burguer {
       min-height: 17px;
       span {        
-        width: 25px;
-        height: 2px;
+        width: 28px;
+        height: 2.5px;
         display: block;
         background-color: #fff;
         margin: 5px;
@@ -124,6 +111,33 @@
       max-width: 598px;
     }
     .navbar-collapse {
+      .links {
+        li{
+          a{
+              @include transition(font-weight 0.3s);
+              @media screen and (max-width: $break-md) {
+                color: $colorOverLight!important;
+              }
+          }
+          border-top: 2px solid transparent;
+          @include transition(border-top-color 0.3S);
+        }
+        li:hover{
+          a{
+            font-weight: 600;
+          }
+          border-top-color: $colorEmphasis;
+        }
+      }
+      .social {
+        a:hover span{
+          color: $colorEmphasis;
+        }
+        span {
+          font-size: large;
+        }
+      }
+
       @media screen and (max-width: $break-md) {
         position: absolute;
         display: block !important;
@@ -144,6 +158,7 @@
           text-decoration: underline;
         }
       }
+
     }
   }
 
