@@ -52,6 +52,9 @@
     font-size: 18px;
     transform: rotate3d(0, 0, 0, 0deg) rotateZ(45deg);
     @include transition(border 0.3s, background-color 0.3s, color 0.3s, transform 0.3s);
+    div {
+      transform: rotateZ(-45deg);
+    }
   }
   .navbar-brand a:hover{
       text-decoration: none;
@@ -108,7 +111,7 @@
   }
   .container{    
     @media screen and (max-width: $break-md) {
-      max-width: 598px;
+      max-width: 610px;
     }
     .navbar-collapse {
       .links {

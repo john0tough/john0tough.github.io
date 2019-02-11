@@ -4,7 +4,7 @@ title: "Olympus Tours"
 position: Full Stack Developer
 period: Sep - 2016 | Oct - 2017
 intro: "Esta es la descripcion de la experiencia laboral"
-image-preview: "/assets/images/olympus-tours.png"
+image-preview: "/assets/images/olympus-tours-logo.png"
 image-title: "/assets/images/olympus-tours.png"
 order: 2
 ---

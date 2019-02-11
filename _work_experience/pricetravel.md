@@ -4,7 +4,7 @@ title: "PriceTravel"
 position: FrontEnd Developer
 period: Oct - 2017 - Current
 intro: "Esta es la descripcion de la experiencia laboral"
-image-preview: "/assets/images/pricetravel.jpg"
+image-preview: "/assets/images/pricetravel-logo.png"
 image-title: "/assets/images/pricetravel.jpg"
 order: 3
 ---
