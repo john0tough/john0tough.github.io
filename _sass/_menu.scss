@@ -55,20 +55,19 @@
     div {      
       transform: rotateZ(-45deg);
       font-weight: 600;
-      font-size: larger;
       span {
         position: absolute;
         &:nth-child(1) {     
-          top: -12px;
-          left: 11PX;
+          top: -17px;
+          left: 9PX;
         }
         &:nth-child(2) {     
-          top: -8px;
-          left: -3px;
+          top: -7px;
+          left: -2px;
         }
         &:nth-child(3) {     
-          top: -3px;
-          left: -17px;
+          top: 3px;
+          left: -12px;
         }
       }      
     }
