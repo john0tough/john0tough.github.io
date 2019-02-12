@@ -3,9 +3,9 @@ layout: default
 ---
 <header class="d-flex py-5 mb-5 small-header" >
   <div class="background" style="background-image: linear-gradient(rgba(2, 50, 90, 0.5),rgba(2, 50, 90, 0.5)), url('{{ page.image-title }}')" ></div>
-  <div class="mx-auto my-auto col-sm-8 p-md-5 p-4 text-center">
+  <div class="mx-auto my-auto col-sm-8 p-md-5 p-4">
     <h2>{{ page.title }}</h3>
-    <p class="meta">{{ page.date | date_to_string }}</p>
+    <span class="meta">{{ page.date }}</span>
   </div>
 </header>
 <main class="container pb-5">
