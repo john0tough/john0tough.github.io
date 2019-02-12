@@ -52,11 +52,28 @@
     font-size: 18px;
     transform: rotate3d(0, 0, 0, 0deg) rotateZ(45deg);
     @include transition(border 0.3s, background-color 0.3s, color 0.3s, transform 0.3s);
-    div {
+    div {      
       transform: rotateZ(-45deg);
+      font-weight: 600;
+      font-size: larger;
+      span {
+        position: absolute;
+        &:nth-child(1) {     
+          top: -12px;
+          left: 11PX;
+        }
+        &:nth-child(2) {     
+          top: -8px;
+          left: -3px;
+        }
+        &:nth-child(3) {     
+          top: -3px;
+          left: -17px;
+        }
+      }      
     }
   }
-  .navbar-brand a:hover{
+  .navbar-brand:hover a{
       text-decoration: none;
       border: 2px solid $colorEmphasis;
       background-color: $bg-color;
@@ -129,7 +146,9 @@
           a{
             font-weight: 600;
           }
-          border-top-color: $colorEmphasis;
+          @media screen and (min-width: $break-md) {
+            border-top-color: $colorEmphasis;
+          }
         }
       }
       .social {
@@ -158,7 +177,6 @@
         }
         .nav-item:hover {
           font-weight: 600;
-          text-decoration: underline;
         }
       }
 
