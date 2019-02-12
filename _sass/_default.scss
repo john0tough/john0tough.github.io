@@ -43,8 +43,8 @@ header{
     bottom: 0px;
     left: 0px;
     right: 0px;
-    background-size: cover;
-    background-attachment: fixed;
+    background-size: auto;
+    background-attachment: inherit;
     background-position: center;
     background-repeat: no-repeat;
   }
@@ -54,6 +54,9 @@ header{
   }  
 }
 .work-experience{
+    .card-header img {
+        width: 50px!important;       
+    }
     .title{
         font-size: 30px; 
         color: #0073b1;
@@ -64,6 +67,19 @@ header{
         @media screen and (max-width: $break-md) {
             position: absolute;
             top: 75px;
+        }
+    }
+    @media screen and (max-width: 375px) {
+        .card-header img {
+            width: 30px!important;       
+        }
+        .title{
+            font-size: 22px;
+        }
+        .role{
+            
+            font-size: 13pt;
+           
         }
     }
 }

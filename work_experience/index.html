@@ -11,14 +11,14 @@ image-title: "/assets/images/work-experience.png"
 <div class="card border-0 mb-3 work-experience  mt-5">
     <div class="card-header bg-transparent d-flex justify-content-between flex-column flex-sm-row align-items-sm-center">
         <div>
-            <img src="{{experience.image-preview}}" alt ="{{experience.title}}" class="img-fluid" style="height: 50px;" />
+            <img src="{{experience.image-preview}}" alt ="{{experience.title}}" class="img-fluid"/>
             <span class="p-3 align-middle title" >{{experience.title}}</span>
         </div>
         <span class="pt-2 role">{{experience.position}}</span>
     </div>
     <div class="card-body">
         <p class="card-text  pt-4 pt-md-0">{{experience.intro}}</p>
-        <a href="#" class="btn btn-outline-primary">Go somewhere</a>
+        <a href="{{experience.url}}" class="btn btn-outline-primary">Go somewhere</a>
     </div>
     <div class="card-footer border-top-0">
         {{experience.period}}  
