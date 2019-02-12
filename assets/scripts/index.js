@@ -18,7 +18,17 @@ function delayClick(ev){
         document.location = this.href;
     }, 200);
 }
-
+function delayClickDisapearBody(ev){
+    ev.preventDefault();
+    console.log(ev);
+    if(ev.target.tagName === 'A') {
+        // setTimeout(()=>{
+        //     document.location = this.href;
+        // }, 200);
+    }
+    
+}
+document.body.addEventListener("click", delayClickDisapearBody);
 document.querySelector(".navbar-brand a").addEventListener('click', delayClick);
 
 document.onreadystatechange = () => {

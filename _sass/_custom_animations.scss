@@ -1,0 +1,24 @@
+@include keyframes(hmOpacity){
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    } 
+}
+@include keyframes(hmOpacityReverse){
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    } 
+}
+@include keyframes(hmTranslate){
+    0% {
+        transform: translate(0px, -50px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    } 
+}

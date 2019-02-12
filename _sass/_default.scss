@@ -9,7 +9,13 @@ $colorOverLight: #888;
 .bg-dark{
     background-color: $bg-color;
 }
-
+body.disapear{
+    @include animateOnce(hmOpacityReverse, ease-in, 0.5s, 0s);
+}
+body{
+    opacity: 0;    
+    @include animateOnce(hmOpacity, ease-in, 0.5s, 0.5s);
+}
 header{
     &.small-header {
         h3{
