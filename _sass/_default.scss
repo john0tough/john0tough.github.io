@@ -9,7 +9,7 @@ $colorOverLight: #888;
 .bg-dark{
     background-color: $bg-color;
 }
-body.disapear{
+body.disappear{
     @include animateOnce(hmOpacityReverse, ease-in, 0.5s, 0s);
 }
 body{
