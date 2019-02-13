@@ -20,11 +20,11 @@ function delayClick(ev){
 }
 function delayClickDisapearBody(ev){
     ev.preventDefault();
-    console.log(ev);
     if(ev.target.tagName === 'A') {
-        // setTimeout(()=>{
-        //     document.location = this.href;
-        // }, 200);
+        document.querySelector('body').setAttribute('class', 'disappear')
+        setTimeout(()=>{
+            document.location = ev.target.href;
+        }, 500);
     }
     
 }

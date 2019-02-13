@@ -6,7 +6,7 @@ body{
     opacity: 0;    
     @include animateOnce(hmOpacity, ease-in, 0.5s, 0.5s);
 }
-body.disapear{
+body.disappear{
     @include animateOnce(hmOpacityReverse, ease-in, 0.5s, 0s);
 }
 #home-profile{
